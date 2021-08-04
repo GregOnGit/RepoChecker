@@ -1,0 +1,86 @@
+@page
+@model UpdaterASPModel
+@{
+    ViewData["Title"] = "ASP.NET Web App Server - Repository";
+    string l_text = "";
+    string l_textColor = "";
+    string l_finalColor = "";
+}
+<h1>@ViewData["Title"]</h1>
+
+<p>Update any changes from this page!</p>
+
+<hr>
+
+<form method="post">
+    <fieldset>
+        @if( !@Checker.s_updatingNow )
+        {
+            <input type="submit" value="Update" class="submit">
+        }
+    </fieldset>
+</form>
+
+<hr>
+
+<script type="text/javascript">
+    if( @Checker.s_updatingNow )
+    window.onload = function()
+    {
+        window.location.reload( true );
+    }
+</script>
+
+<div>
+    <div>
+        <h2>
+            Update Status
+        </h2>
+    </div>
+        @{
+            switch( @Checker.s_updateStatus )
+            {
+                case UpdateStatus.UpToDate:
+                    l_text = "Up to date! Container is running!";
+                    l_textColor = "#00AA00";
+                    break;
+                case UpdateStatus.PreStage:
+                    l_text = "PreStage";
+                    l_textColor = "#00AA00";
+                    break;
+                case UpdateStatus.Pulling:
+                    l_text = "Pulling from GitHub repository...";
+                    l_textColor = "#000000";
+                    break;
+                case UpdateStatus.RemovingOldContainer:
+                    l_text = "Removing old container...";
+                    l_textColor = "#000022";
+                    break;
+                case UpdateStatus.CleaningProject:
+                    l_text = "Cleaning .NET project...";
+                    l_textColor = "#000044";
+                    break;
+                case UpdateStatus.BuildingProject:
+                    l_text = "Building .NET project from scratch...";
+                    l_textColor = "#000066";
+                    break;
+                case UpdateStatus.BuildingImage:
+                    l_text = "Building Docker image from project...";
+                    l_textColor = "#000088";
+                    break;
+                case UpdateStatus.CreatingContainer:
+                    l_text = "Creating container from image...";
+                    l_textColor = "#0000AA";
+                    break;
+                case UpdateStatus.StartingContainer:
+                    l_text = "Starting Container...";
+                    l_textColor = "#0000CC";
+                    break;
+            }
+
+            l_finalColor = "color:" + l_textColor + ";";
+        }
+        <h3 style="@l_finalColor">
+            @l_text
+        </h3>
+</div>

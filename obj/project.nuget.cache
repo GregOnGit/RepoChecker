@@ -1,0 +1,14 @@
+{
+  "version": 2,
+  "dgSpecHash": "6r8r4x5De6S+c2HUGMUWH4+BELLcDSNMnGjpHOjWYpd/2PHn3jyl4twJED6MAU+63SnsnDyJ3eTGna5ScgGUbA==",
+  "success": true,
+  "projectFilePath": "/home/greg/SyncThing/Personal/Projects/OS/WebDocker/RepoChecker/RepoChecker.csproj",
+  "expectedPackageFiles": [
+    "/home/greg/.nuget/packages/docker.dotnet/3.125.4/docker.dotnet.3.125.4.nupkg.sha512",
+    "/home/greg/.nuget/packages/libgit2sharp/0.27.0-preview-0102/libgit2sharp.0.27.0-preview-0102.nupkg.sha512",
+    "/home/greg/.nuget/packages/libgit2sharp.nativebinaries/2.0.312/libgit2sharp.nativebinaries.2.0.312.nupkg.sha512",
+    "/home/greg/.nuget/packages/newtonsoft.json/12.0.3/newtonsoft.json.12.0.3.nupkg.sha512",
+    "/home/greg/.nuget/packages/system.buffers/4.5.1/system.buffers.4.5.1.nupkg.sha512"
+  ],
+  "logs": []
+}
